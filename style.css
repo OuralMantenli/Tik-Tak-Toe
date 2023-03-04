@@ -7,6 +7,11 @@ td {
     height: 133px;
     border: 5px solid black; 
     position: relative;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: rgba(190, 168, 169, 0.3);
 }
 
 tr:first-child td {
@@ -34,4 +39,8 @@ table {
     left: 8px;
     right: 0;
     bottom: 0;
+}
+
+.d-none {
+    display: none;
 }
