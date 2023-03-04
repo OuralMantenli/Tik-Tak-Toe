@@ -1,3 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+}
+
+.player-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.player-panel div{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.player-panel img{
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.player-inactive {
+    opacity: 0.5;
+}
+
 tr {
     width: 399px;
 }
