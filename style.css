@@ -82,3 +82,16 @@ table {
 .d-none {
     display: none;
 }
+
+.horizontal-line {
+    height: 10px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: scale(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-vertical {
+    transform: rotate(90deg) scaleX(0.0);
+}
