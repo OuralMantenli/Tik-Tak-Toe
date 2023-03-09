@@ -1,8 +1,9 @@
 let fields = [];
+let gameOver = false;
 let currentShape = 'cross';
 
 function fillShape(id) {
-    if (!fields[id]) {
+    if (!fields[id] && !gameOver) {
         if (currentShape == 'cross') {
             currentShape = 'circle';
             document.getElementById('player-2').classList.remove('player-inactive');
@@ -57,10 +58,35 @@ function checkForWin() {
     }
     if (fields[0] == fields[4] && fields[4] == fields[8] && fields[0]) {
         winner = fields[0];
-        document.getElementById('line-7').style.transform = 'rotate(45deg) scaleX(1)';
+        document.getElementById('line-7').style.transform = 'rotate(45deg) scaleX(1.2)';
     }
     if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
         winner = fields[2];
-        document.getElementById('line-8').style.transform = 'rotate(-45deg) scaleX(1)';
+        document.getElementById('line-8').style.transform = 'rotate(-45deg) scaleX(1.2)';
+    }
+    if (winner){
+        gameOver = true;
+        document.body.style.background = "rgba(230, 230, 230, 0.9)";
+        setTimeout(function(){
+            document.getElementById('game-over').classList.remove('d-none');
+            document.getElementById('restart-btn').classList.remove('d-none');
+        }, 1000);
+    }
+}
+
+function restart() {
+    gameOver = false;
+    fields = [];
+    currentShape = 'cross';
+    document.getElementById('game-over').classList.add('d-none');
+    document.getElementById('restart-btn').classList.add('d-none');
+    document.body.style.background = "rgb(201, 169, 171)";
+
+    for (let i = 1; i < 9; i++){
+        document.getElementById('line-'+i).classList.add('d-none');
+    }
+    for (let i = 0; i < 9; i++){
+        document.getElementById('circle-'+i).classList.add('d-none');
+        document.getElementById('cross-'+i).classList.add('d-none');
     }
 }
